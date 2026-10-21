@@ -2,7 +2,6 @@
 
 The newest version is first.
 
-
 ## 0.1.6 (2026-10-21)
 
 - **Update alerts:** when a new version of OnTheGrid is out, an alert appears in the toolbar. Click it to see what's new and download it.
