@@ -4,9 +4,9 @@ Free Mac tools for recording and producing music, made in a working studio to ta
 the slow, fiddly steps out of getting a song from a rough recording to a finished
 production.
 
-Each tool is a stand-alone app for Macs with Apple silicon (M1 or later), signed and
-notarized by Apple, and runs entirely on your Mac: nothing you open in them is uploaded
-anywhere.
+Each tool is a stand-alone Mac app, signed and notarized by Apple, and runs entirely on
+your Mac: nothing you open in them is uploaded anywhere. OnTheGrid needs Apple silicon
+(M1 or later); FirstPass runs on Apple silicon and Intel Macs.
 
 ---
 
@@ -34,7 +34,7 @@ track is, prepares it (polarity, gating, filtering, EQ, compression, level, pan)
 you a balanced mix on a virtual console you can adjust, bounce, or open in REAPER or
 Pro Tools.
 
-[About FirstPass](firstpass/) · *Downloads coming soon*
+[Guide](firstpass/) · [Download the latest version](https://github.com/musicdemo/StudioTools/releases?q=firstpass&expanded=true) · [What's new](firstpass/CHANGELOG.md)
 
 <br clear="left">
 
