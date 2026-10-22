@@ -24,7 +24,7 @@ Drop the files into your DAW at zero and they're on the grid.
 [Download the latest version](https://github.com/musicdemo/StudioTools/releases?q=onthegrid&expanded=true) ·
 [What's new](CHANGELOG.md)
 
-**Needs** a Mac with Apple silicon (M1 or later) and about 1 GB of disk space.
+**Needs** a Mac with Apple silicon (M1 or later) and about 500 MB of disk space.
 
 ---
 
@@ -32,6 +32,7 @@ Drop the files into your DAW at zero and they're on the grid.
 
 - [Installing](#installing)
 - [Quick start](#quick-start)
+- [Saving and opening songs](#saving-and-opening-songs)
 - [Checking and fixing the timing](#checking-and-fixing-the-timing)
 - [Tempo](#tempo)
 - [Song sections](#song-sections)
@@ -61,13 +62,30 @@ what's new and download it.
 
 1. **Drop a song** onto the window, or click **Choose a Song…**. WAV or MP3; a rough phone
    recording works, so do rehearsals and live takes.
-2. OnTheGrid splits it, finds the beat and finds the chords. The first time takes about
-   half a minute; after that the same file opens instantly.
+2. OnTheGrid splits it, finds the beat and finds the chords, in about half a minute.
 3. **Listen** with the click on (the metronome button). The high click should land on the
    one of every bar. Anything worth a closer listen is listed under **Worth a listen**.
 4. Mark the song's sections and fix any chord or bar line you want to (all optional).
 5. Click **Render**. The files go to `Music/OnTheGrid/<Song> (<tempo> BPM, <meter>)`, and
    **Show in Finder** takes you there.
+6. To come back to the song later, **File ▸ Save** it.
+
+## Saving and opening songs
+
+**File ▸ Save** keeps everything about a song in one `.otg` file: the recording, its stems,
+and every change you made (bar lines, tempo, meter, sections, chords, key), rendered or
+not. A five-minute song's file is about 50–80 MB. Open it again with **File ▸ Open**,
+**File ▸ Open Recent**, by double-clicking it in Finder, or by dropping it on the window:
+it opens instantly, just as you left it. The file holds everything it needs, so you can
+move it, back it up or send it to another Mac with OnTheGrid.
+
+**File ▸ New** (or **Close**) goes back to the drop screen for the next song. If the song
+that's open has changes you haven't saved, OnTheGrid asks whether to save them first, and
+it asks again when you quit. The window's title shows **Edited** while there are unsaved
+changes.
+
+Opening the recording itself again (rather than its `.otg` file) starts from what
+OnTheGrid found, without your changes; it's quick, because the stems are kept.
 
 ## Checking and fixing the timing
 
@@ -163,7 +181,8 @@ lead-in, so they stack in your DAW and you can comp between them.
   may need a stretch marker or two by hand in your DAW.
 - **Stretching artifacts** grow with the amount of stretch: a few percent is inaudible; a
   quarter or more is worth a careful listen.
-- **The first song after installing** takes a little longer while macOS checks the app.
+- **The first song after installing** takes a little longer (about 15 seconds more) while
+  macOS checks the app and OnTheGrid gets its models ready for your Mac.
 
 ## Video tutorials
 
