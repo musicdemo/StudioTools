@@ -2,6 +2,15 @@
 
 The newest version is first.
 
+## 1.3.1 (2026-10-23)
+
+- **Safer input levels:** tom tracks that are only hit in a few fills are now measured by their hits, not by the bleed between them. Before, such toms could be turned up by nearly 20 dB and clip. No track's input trim now takes its peaks above -6 dBFS; where that holds a track back, its fader makes up the difference, so the balance stays the same.
+- **Drum panning:** the hi-hat, toms and cymbal mics are panned to where they sit in the overheads, so each hit comes from one place, with the hi-hat and toms a little wider. The toms keep their order from one side to the other.
+- **Guitar panning:** two electric or two acoustic guitars are panned hard left and right; with more electric parts, the outer pair goes hard and the rest spread between.
+- **Changing a track's role:** playback stops while FirstPass prepares the track again, then a window lists what it did (the bus it moved to, EQ, trim, compression and so on).
+
+[Download](https://github.com/musicdemo/StudioTools/releases/download/firstpass-v1.3.1/FirstPass-1.3.1.dmg)
+
 ## 1.3.0 (2026-10-21)
 
 The first public release of FirstPass: a reference mix from a folder of stems, in minutes.
