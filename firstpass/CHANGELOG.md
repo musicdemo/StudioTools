@@ -2,6 +2,15 @@
 
 The newest version is first.
 
+## 1.4.0 (2026-10-28)
+
+- **Choose what to export:** Export to REAPER and Export to Pro Tools now open a window where you pick what's included. Track order, folders and colours always come along. **Sounds like FirstPass** and **Organised stems only** set everything at once, and FirstPass remembers your choices for each.
+- **REAPER:** choose whether to include polarity and time alignment, faders and pans, mutes, the FirstPass Channel plugin (with filters, gates, EQ and compression each on or off), bus and master processing, the reverbs, the reference and the tempo. A project can now have no FirstPass plugins at all: each track's input trim is then set on its item, so the faders still give FirstPass's balance.
+- **Pro Tools:** clean, aligned stems by default. You can also print filters, gates, EQ or compression into the audio (each only on the tracks where it's on: tick Gates alone to get just the gated tracks gated), and print the reverb returns as tracks.
+- **Console:** the bus and reverb faders now sit at the end of the track faders, so many more tracks fit on screen; only the master stays pinned on the right. Bus and reverb faders have blue caps.
+
+[Download](https://github.com/musicdemo/StudioTools/releases/download/firstpass-v1.4.0/FirstPass-1.4.0.dmg)
+
 ## 1.3.1 (2026-10-23)
 
 - **Safer input levels:** tom tracks that are only hit in a few fills are now measured by their hits, not by the bleed between them. Before, such toms could be turned up by nearly 20 dB and clip. No track's input trim now takes its peaks above -6 dBFS; where that holds a track back, its fader makes up the difference, so the balance stays the same.
