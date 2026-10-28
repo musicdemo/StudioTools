@@ -40,6 +40,7 @@ never uploaded anywhere.
 - [Reverb](#reverb)
 - [Bouncing](#bouncing)
 - [Projects](#projects)
+- [Exporting](#exporting)
 - [Exporting to REAPER](#exporting-to-reaper)
 - [Exporting to Pro Tools](#exporting-to-pro-tools)
 - [Settings](#settings)
@@ -78,7 +79,8 @@ it; otherwise it works the tempo out from the playing.
 ## The console
 
 Every track has a strip, grouped into busses (drums, percussion, bass, guitars, keys, lead
-vocal, backing vocals), followed by the reverb returns and the master.
+vocal, backing vocals). The bus and reverb faders (blue caps) come after the tracks; the
+master (red) stays pinned on the right.
 
 - **Role menu** at the top of each strip: what FirstPass thinks the track is. Amber means a
   guess worth checking; choose the right role and the track is prepared again for it.
@@ -142,20 +144,32 @@ the session.
 a `.firstpass` file in Finder opens it too. **Save As…** copies the project to a new folder.
 FirstPass asks before closing a session with unsaved changes.
 
+## Exporting
+
+Both exports open a window where you choose what's included. Track order, folders and colours
+always come along. **Sounds like FirstPass** ticks everything; **Organised stems only** keeps
+just the alignment, the reference and the tempo. FirstPass remembers your choices for each DAW.
+**Polarity and time alignment** is marked *recommended*: it keeps related microphones in phase.
+
 ## Exporting to REAPER
 
 **File › Export to REAPER…** (⌘E), or the **REAPER** button, saves the mix as a REAPER project
-in the song's project folder and opens it in REAPER:
+in the song's project folder and opens it in REAPER. Everything is ticked by default:
 
-- busses are folder tracks with their tracks inside, and the reverbs are tracks fed by sends;
-- every channel, bus and the master carries the **FirstPass Channel** plugin with the
-  console's settings, and the reverbs carry **FirstPass Reverb**, so the project sounds like
-  the console;
-- fader, pan, mute and polarity are on REAPER's own controls, so automation works as usual;
-- the tempo and the session's sample rate are set, and the reference mix is a muted,
-  level-matched track at the bottom.
+- **Polarity and time alignment**: REAPER's polarity buttons and the items' start offsets.
+- **Faders and pans**, and **mutes**, on REAPER's own controls, so automation works as usual.
+- **Channel processing**: every channel carries the **FirstPass Channel** plugin with the
+  console's settings, with **Filters**, **Gates**, **EQ** and **Compression** each on or off
+  (unticked stages are in the plugin, switched off, so you can turn them on later).
+- **Bus and master processing**: bus compression, the master compressor and limiter.
+- **Reverbs**: the plate and room tracks with **FirstPass Reverb**, and the sends to them.
+- The **reference mix** (a muted, level-matched track at the bottom) and the **tempo**.
 
-The FirstPass plugins are installed into REAPER with every export. **File › Install REAPER
+Busses are folder tracks with their tracks inside, and the project runs at the session's
+sample rate. A project can have **no FirstPass plugins at all**: each track's input trim is
+then set on its item, so the faders still give the console's balance.
+
+The plugins are installed into REAPER with any export that uses them. **File › Install REAPER
 Plugins** installs them without exporting, for a Mac that will open projects exported
 elsewhere. REAPER 7.45 or later is recommended.
 
@@ -163,32 +177,36 @@ elsewhere. REAPER 7.45 or later is recommended.
 
 **File › Export to Pro Tools…** (⇧⌘E) builds the session in Pro Tools itself. It needs
 **Pro Tools 2025.10 or later**, running, with no session open; FirstPass offers to open it.
+The session goes in the song's project folder, with a **folder per bus**, its tracks inside
+in console order, coloured by bus. The audio is 32-bit float, so nothing clips.
 
-The session goes in the song's project folder, with:
+By default you get clean, aligned stems:
 
-- a **folder per bus**, its tracks inside in console order, coloured by bus;
-- each track's **input trim, polarity and time alignment written into its audio**
-  (32-bit float, so nothing clips), and its mute as on the console;
-- a muted **FIRSTPASS MIX** track with the console's full mix, and the **reference**,
-  level-matched, to compare against;
-- a **marker at the start** with the song's tempo.
+- **Polarity and time alignment** and the **input trim**, written into the audio (so Pro
+  Tools' polarity buttons stay off);
+- **mutes** as on the console;
+- a muted **FIRSTPASS MIX** track with the console's full mix, the **reference**
+  (muted, level-matched), and a **marker at the start** with the song's tempo.
+
+You can also **print processing into the audio**: **Filters**, **Gates**, **EQ** and
+**Compression**, each only on the tracks where it's switched on. Tick **Gates** alone, for
+example, to get just the gated tracks gated and everything else clean. Printed processing
+always includes the trim, since the console set it for the trimmed signal; compression was set
+for the EQ'd signal, so without EQ it acts differently. **Reverb returns** can be printed as
+tracks too (off by default).
 
 Some things Pro Tools doesn't yet let another app set:
 
 - **the tempo:** set it from the marker (the session opens at 120 BPM; the audio stays put
   when you change it);
 - **faders and pans** start at unity. The console's values are in **`FirstPass levels.txt`**
-  in the session folder, and with the trims already in the files they give the console's
-  balance as they are;
+  in the session folder, with what's in each file (trim, polarity, printed processing); with
+  the trims in the files, the fader values give the console's balance as they are;
 - **routing:** the folders organise the tracks, but every track plays straight to the main
-  output;
-- **processing:** EQ, dynamics and reverb aren't carried over (the FIRSTPASS MIX track has
-  them).
+  output.
 
-Polarity flips are in the audio, so Pro Tools' polarity buttons stay off; `FirstPass levels.txt`
-lists the flipped tracks. Exporting the same song again makes a new numbered session beside
-the old one. **Pro Tools Intro** allows only 8 audio tracks, so most songs need Pro Tools
-Artist or Studio.
+Exporting the same song again makes a new numbered session beside the old one. **Pro Tools
+Intro** allows only 8 audio tracks, so most songs need Pro Tools Artist or Studio.
 
 ## Settings
 
